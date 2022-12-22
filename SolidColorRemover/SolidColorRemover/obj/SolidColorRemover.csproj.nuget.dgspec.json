@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tryne\\Documents\\GitHub\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj": {}
+    "C:\\Users\\tryne\\Documents\\VoXelGDesign\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tryne\\Documents\\GitHub\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj": {
+    "C:\\Users\\tryne\\Documents\\VoXelGDesign\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tryne\\Documents\\GitHub\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj",
+        "projectUniqueName": "C:\\Users\\tryne\\Documents\\VoXelGDesign\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj",
         "projectName": "SolidColorRemover",
-        "projectPath": "C:\\Users\\tryne\\Documents\\GitHub\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj",
+        "projectPath": "C:\\Users\\tryne\\Documents\\VoXelGDesign\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover.csproj",
         "packagesPath": "C:\\Users\\tryne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tryne\\Documents\\GitHub\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\obj\\",
+        "outputPath": "C:\\Users\\tryne\\Documents\\VoXelGDesign\\SolidColorRemover\\SolidColorRemover\\SolidColorRemover\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

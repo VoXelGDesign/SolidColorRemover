@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolidColorRemover
+namespace SolidColorRemover.model
 {
-    
+
     abstract class ThreadManager
     {
         protected List<Job> jobsQueue = new List<Job>();

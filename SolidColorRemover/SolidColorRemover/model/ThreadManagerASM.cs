@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolidColorRemover
+namespace SolidColorRemover.model
 {
     internal class ThreadManagerASM : ThreadManager
     {
@@ -13,9 +13,9 @@ namespace SolidColorRemover
             ThreadPool.SetMinThreads(numberOfThreads, numberOfThreads);
             ThreadPool.SetMaxThreads(numberOfThreads, numberOfThreads);
 
-            this.jobsQueue = JobsQueueFactory.CreateJobQueue();
+           // jobsQueue = JobsQueueFactory.CreateJobQueue();
 
-            foreach(var job in this.jobsQueue)
+            foreach (var job in jobsQueue)
             {
                 var task = Task.Factory.StartNew(() => doTask(job));
             }
