@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using Microsoft.VisualBasic.ApplicationServices;
 using SolidColorRemover.model;
 
 namespace SolidColorRemover
@@ -115,6 +117,22 @@ namespace SolidColorRemover
                     new Bitmap(Image.FromFile(openFileDialog1.FileName)), colorDialog1.Color, 85);
                 pictureBox2.Image = benchCS.Bitmap;
                 label1.Text = benchCS.TimeElapsed.TotalMilliseconds.ToString() + " ms";
+            }
+            //else if (radioButton2.Checked == true)
+            //{
+            //    ThreadManagerASM benchASM = new ThreadManagerASM(trackBar1.Value,
+            //        new Bitmap(Image.FromFile(openFileDialog1.FileName)), colorDialog1.Color, 85);
+            //    pictureBox2.Image = benchASM.Bitmap;
+            //    label1.Text = benchASM.TimeElapsed.TotalMilliseconds.ToString() + " ms";
+            //}
+            else if(radioButton2.Checked == true)
+            {
+                unsafe
+                {
+                    [DllImport(@"C:\Users\tryne\Documents\GitHub\SolidColorRemover\SolidColorRemover\SolidColorRemover\resources\ASMLibrary.dll")]
+                    static extern int RemoveColor();
+                    label1.Text = RemoveColor().ToString();
+                }
             }
 
         }
