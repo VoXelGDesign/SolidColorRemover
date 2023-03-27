@@ -30,25 +30,28 @@ namespace SolidColorRemover.model
         public Bitmap Bitmap { get; set; }
         public int Offset { get; set; }
 
-        private int chunkSize;
-
         public ThreadManagerASM(int numThreads, Bitmap bitmap, Color colorPassed, int offset)
         {
             ThreadPool.SetMaxThreads(numThreads, numThreads);
             ThreadPool.SetMinThreads(numThreads, numThreads);
-     
-            pixels = new int[bitmap.Width * bitmap.Height];
+            _splitSize = numThreads;
+
+            int bitmapSize = bitmap.Width * bitmap.Height;
+            int sizeOfPixelsArray = (((bitmapSize) / 4) * 4)+4;
+            int chunkSize = ((sizeOfPixelsArray / _splitSize) / 4) * 4;
+
+            pixels = new int[sizeOfPixelsArray];
             _colorToRemove = colorPassed;
             lowColorBoundry = (255 << 24) | (Math.Max(0,_colorToRemove.R - offset) << 16) | (Math.Max(0, _colorToRemove.G - offset) << 8) | (Math.Max(0, _colorToRemove.B - offset));
             highColorBoundry = (255 << 24) | (Math.Min(255, _colorToRemove.R + offset) << 16) | (Math.Min(255, _colorToRemove.G + offset) << 8) | (Math.Min(255, _colorToRemove.B + offset));
-            _splitSize = numThreads;
-            chunkSize = ((pixels.Length / _splitSize) / 4) * 4;
+            
+            
 
             BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite,PixelFormat.Format32bppArgb);
-            System.Runtime.InteropServices.Marshal.Copy(bitmapData.Scan0, pixels, 0, pixels.Length);
+            Marshal.Copy(bitmapData.Scan0, pixels, 0, bitmapSize);
             bitmap.UnlockBits(bitmapData);
            
-            var tasks = new Task[_splitSize];
+            var tasks = new Task[_splitSize+1];
 
             DateTime beggingDateTime = DateTime.Now;
 
@@ -63,6 +66,16 @@ namespace SolidColorRemover.model
 
             }
 
+            int donePixels = _splitSize * chunkSize;
+            if (_splitSize * chunkSize < pixels.Length)
+            {
+                tasks[_splitSize] = Task.Factory.StartNew(() => doTask(donePixels - 1, (pixels.Length - donePixels) / 4));
+            }
+            else
+            {
+                tasks[_splitSize] = Task.Factory.StartNew(() => { return; });
+            }
+
             Task.WaitAll(tasks);
 
             DateTime endDateTime = DateTime.Now;
@@ -70,7 +83,7 @@ namespace SolidColorRemover.model
             TimeElapsed = (endDateTime - beggingDateTime);
 
             bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite,PixelFormat.Format32bppArgb);
-            System.Runtime.InteropServices.Marshal.Copy(pixels, 0, bitmapData.Scan0, pixels.Length);
+            Marshal.Copy(pixels, 0, bitmapData.Scan0, bitmapSize);
             bitmap.UnlockBits(bitmapData);
 
             Bitmap = bitmap;

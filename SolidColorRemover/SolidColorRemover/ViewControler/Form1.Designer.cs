@@ -197,7 +197,7 @@ namespace SolidColorRemover
             this.button8.Enabled = false;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(691, 144);
+            this.button8.Location = new System.Drawing.Point(606, 150);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(135, 45);
             this.button8.TabIndex = 17;
@@ -211,7 +211,7 @@ namespace SolidColorRemover
             this.button7.Enabled = false;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(691, 84);
+            this.button7.Location = new System.Drawing.Point(606, 90);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(135, 45);
             this.button7.TabIndex = 16;
@@ -258,7 +258,7 @@ namespace SolidColorRemover
             this.button6.Enabled = false;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(846, 84);
+            this.button6.Location = new System.Drawing.Point(761, 90);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(135, 45);
             this.button6.TabIndex = 12;
@@ -269,9 +269,9 @@ namespace SolidColorRemover
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(846, 6);
+            this.panel4.Location = new System.Drawing.Point(936, 31);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(135, 13);
+            this.panel4.Size = new System.Drawing.Size(44, 164);
             this.panel4.TabIndex = 11;
             // 
             // label6
@@ -324,7 +324,7 @@ namespace SolidColorRemover
             this.button5.Enabled = false;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(846, 25);
+            this.button5.Location = new System.Drawing.Point(761, 31);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(135, 45);
             this.button5.TabIndex = 6;
@@ -348,7 +348,7 @@ namespace SolidColorRemover
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(691, 25);
+            this.button4.Location = new System.Drawing.Point(606, 31);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(135, 45);
             this.button4.TabIndex = 4;
@@ -362,7 +362,7 @@ namespace SolidColorRemover
             this.button3.Enabled = false;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(846, 144);
+            this.button3.Location = new System.Drawing.Point(761, 150);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(135, 45);
             this.button3.TabIndex = 3;
